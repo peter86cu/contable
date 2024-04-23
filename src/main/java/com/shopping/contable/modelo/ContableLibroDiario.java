@@ -13,13 +13,17 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="contable_gastos")
-public class ContableGastos implements Serializable {
+@Table(name="contable_libro_diario")
+public class ContableLibroDiario implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
     private String id;
-    private String tipogasto;
-    private String moneda;
+	private String centrocosto;
+    private int idtipoie;
+    private int moneda;
+    private String tipo;
+    private int iva;
+    private String entradasalida;
     private double saldo;
     private String factura;
     private String fecha;
@@ -31,18 +35,8 @@ public class ContableGastos implements Serializable {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getTipogasto() {
-		return tipogasto;
-	}
-	public void setTipogasto(String tipogasto) {
-		this.tipogasto = tipogasto;
-	}
-	public String getMoneda() {
-		return moneda;
-	}
-	public void setMoneda(String moneda) {
-		this.moneda = moneda;
-	}
+	
+	
 	public double getSaldo() {
 		return saldo;
 	}
@@ -73,11 +67,48 @@ public class ContableGastos implements Serializable {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	public ContableGastos() {
+	public ContableLibroDiario() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-    
+	
+	public String getCentrocosto() {
+		return centrocosto;
+	}
+	public void setCentrocosto(String centrocosto) {
+		this.centrocosto = centrocosto;
+	}
+	public int isIva() {
+		return iva;
+	}
+	public void setIva(int iva) {
+		this.iva = iva;
+	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	public String getEntradasalida() {
+		return entradasalida;
+	}
+	public void setEntradasalida(String entradasalida) {
+		this.entradasalida = entradasalida;
+	}
+	public int getIdtipoie() {
+		return idtipoie;
+	}
+	public void setIdtipoie(int idtipoie) {
+		this.idtipoie = idtipoie;
+	}
+	public int getMoneda() {
+		return moneda;
+	}
+	public void setMoneda(int moneda) {
+		this.moneda = moneda;
+	}
+	
     
 
 }
